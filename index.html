@@ -1,0 +1,68 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cyy 摄影作品集</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <img
+        class="hero-cover"
+        src="assets/photos/city/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260228212620_153_277.jpg"
+        alt="封面照片"
+      />
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="hero-kicker">CYY PHOTOGRAPHY</p>
+        <h1>镜头里的故事</h1>
+        <p>人文、城市风光与人像，记录生活的光影片段。</p>
+        <a href="#gallery" class="hero-btn">进入作品</a>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="intro">
+        <h2>摄影分类</h2>
+        <p>点击分类按钮查看不同主题的作品，点击图片可放大。</p>
+      </section>
+
+      <section class="profile-card">
+        <h2>关于我</h2>
+        <p class="profile-intro">
+          我是Cyy，一名热爱摄影的创作者，也是十年咖啡餐饮行业的项目负责人。
+          日常用镜头记录城市、人文和人物，也在持续学习
+          Python开发。
+        </p>
+        <div class="profile-info">
+          <p><strong>姓名：</strong>Chang Cyy</p>
+          <p><strong>方向：</strong>摄影创作 / Python 入门开发</p>
+          <p><strong>邮箱：</strong>changcy312outlook.com</p>
+        </div>
+      </section>
+
+      <section id="gallery">
+        <div class="filters">
+          <button class="filter-btn active" data-category="all">全部</button>
+          <button class="filter-btn" data-category="renwen">人文</button>
+          <button class="filter-btn" data-category="city">城市风光</button>
+          <button class="filter-btn" data-category="portrait">人像</button>
+        </div>
+        <div id="gallery-grid" class="gallery-grid"></div>
+      </section>
+    </main>
+
+    <div id="lightbox" class="lightbox">
+      <button id="lightbox-close" class="lightbox-close" aria-label="关闭">×</button>
+      <img id="lightbox-img" src="" alt="放大图片" />
+      <p id="lightbox-caption"></p>
+    </div>
+
+    <footer class="site-footer">
+      <p><span id="year"></span> Cyy 摄影作品集</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
