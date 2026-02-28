@@ -86,7 +86,7 @@ const displayPhotos = photos.map((item) => {
 });
 
 function buildPath(item) {
-  return `assets/photos/${item.category}/${item.name}`;
+  return `assets/photos/${item.category}/${encodeURIComponent(item.name)}`;
 }
 
 function renderGallery(category) {
