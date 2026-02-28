@@ -1,0 +1,249 @@
+﻿:root {
+  --bg: #0d0f12;
+  --surface: #161a1f;
+  --text: #ece9e4;
+  --soft: #a8a49d;
+  --accent: #d4b483;
+  --line: rgba(255, 255, 255, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  color: var(--text);
+  background: var(--bg);
+  font-family: "Palatino Linotype", "Times New Roman", serif;
+}
+
+.hero {
+  position: relative;
+  min-height: 68vh;
+  display: grid;
+  place-items: center;
+  background-image: url("assets/photos/city/微信图片_20260228212630_165_277.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.7));
+}
+
+.hero-content {
+  position: relative;
+  text-align: center;
+  width: min(92vw, 900px);
+  animation: fade-up 0.8s ease;
+}
+
+.hero-kicker {
+  letter-spacing: 0.2em;
+  font-family: "Segoe UI", sans-serif;
+  font-size: 0.78rem;
+  margin: 0 0 8px;
+  color: var(--accent);
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2rem, 6vw, 4.2rem);
+  font-weight: 500;
+}
+
+.hero-content p {
+  font-family: "Segoe UI", sans-serif;
+  color: #d6d2cb;
+  margin: 10px auto 0;
+  max-width: 56ch;
+}
+
+.hero-btn {
+  display: inline-block;
+  margin-top: 22px;
+  padding: 10px 20px;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  text-decoration: none;
+  font-family: "Segoe UI", sans-serif;
+  border-radius: 999px;
+  transition: 0.2s ease;
+}
+
+.hero-btn:hover {
+  background: var(--accent);
+  color: #1d1a17;
+}
+
+.container {
+  width: min(1100px, 92vw);
+  margin: 28px auto 36px;
+}
+
+.intro h2 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.intro p {
+  margin-top: 10px;
+  color: var(--soft);
+  font-family: "Segoe UI", sans-serif;
+}
+
+.profile-card {
+  margin-top: 18px;
+  border: 1px solid var(--line);
+  background: #11151a;
+  border-radius: 12px;
+  padding: 18px;
+}
+
+.profile-card h2 {
+  margin: 0;
+}
+
+.profile-intro {
+  margin-top: 10px;
+  color: #d5d0c7;
+  font-family: "Segoe UI", sans-serif;
+  line-height: 1.7;
+}
+
+.profile-info {
+  margin-top: 12px;
+  display: grid;
+  gap: 6px;
+  font-family: "Segoe UI", sans-serif;
+  color: var(--soft);
+}
+
+.filters {
+  margin-top: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.filter-btn {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--text);
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-family: "Segoe UI", sans-serif;
+  cursor: pointer;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.gallery-grid {
+  margin-top: 18px;
+  columns: 1;
+  column-gap: 14px;
+}
+
+.photo-card {
+  break-inside: avoid;
+  margin-bottom: 14px;
+  border: 1px solid var(--line);
+  background: #12151a;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: zoom-in;
+  animation: fade-up 0.45s ease;
+}
+
+.photo-card img {
+  width: 100%;
+  display: block;
+}
+
+.photo-meta {
+  padding: 10px 12px;
+  font-family: "Segoe UI", sans-serif;
+  color: var(--soft);
+  font-size: 0.9rem;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.92);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 24px;
+  z-index: 20;
+}
+
+.lightbox.open {
+  display: flex;
+}
+
+#lightbox-img {
+  max-width: min(92vw, 1200px);
+  max-height: 82vh;
+  border: 1px solid var(--line);
+}
+
+#lightbox-caption {
+  margin: 10px 0 0;
+  color: #d2cdc4;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  border: 1px solid var(--line);
+  background: #15181d;
+  color: #f8f6f1;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.site-footer {
+  text-align: center;
+  font-family: "Segoe UI", sans-serif;
+  color: var(--soft);
+  padding: 8px 0 24px;
+}
+
+@media (min-width: 640px) {
+  .gallery-grid {
+    columns: 2;
+  }
+}
+
+@media (min-width: 980px) {
+  .gallery-grid {
+    columns: 3;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
