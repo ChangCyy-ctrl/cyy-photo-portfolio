@@ -157,6 +157,59 @@ h1 {
   color: #1d1a17;
 }
 
+
+
+.projects {
+  margin-top: 18px;
+}
+
+.projects h2 {
+  margin: 0;
+}
+
+.projects-lead {
+  margin-top: 10px;
+  color: var(--soft);
+  font-family: "Segoe UI", sans-serif;
+}
+
+.project-grid {
+  margin-top: 14px;
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 1fr;
+}
+
+.project-card {
+  border: 1px solid var(--line);
+  background: #10141a;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.project-tag {
+  display: inline-block;
+  margin: 0 0 8px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(212, 180, 131, 0.6);
+  color: var(--accent);
+  font-family: "Segoe UI", sans-serif;
+  font-size: 0.78rem;
+}
+
+.project-card h3 {
+  margin: 0 0 8px;
+  color: #efe6d6;
+}
+
+.project-card p {
+  margin: 8px 0;
+  color: #d6d1c7;
+  font-family: "Segoe UI", sans-serif;
+  line-height: 1.6;
+}
+
 .contact-card {
   margin-top: 16px;
   border: 1px dashed rgba(212, 180, 131, 0.5);
@@ -167,6 +220,12 @@ h1 {
 
 .contact-card h2 {
   margin: 0;
+}
+
+.contact-card p {
+  margin: 8px 0 0;
+  color: #ddd7cd;
+  font-family: "Segoe UI", sans-serif;
 }
 
 
@@ -311,6 +370,10 @@ h1 {
   .service-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (min-width: 980px) {
@@ -319,6 +382,10 @@ h1 {
   }
 
   .service-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .project-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
