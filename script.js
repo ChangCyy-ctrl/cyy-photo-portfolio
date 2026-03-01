@@ -97,7 +97,7 @@ const lightboxCaption = document.getElementById("lightbox-caption");
 const lightboxClose = document.getElementById("lightbox-close");
 const copyTip = document.getElementById("copy-tip");
 const copyWechatButtons = document.querySelectorAll(".copy-wechat");
-const WECHAT_ID = "17765103312";
+const WECHAT_ID = "17665103312";
 
 let displayPhotos = [];
 
@@ -215,5 +215,6 @@ async function initGallery() {
 }
 
 initGallery();
+
 
 
