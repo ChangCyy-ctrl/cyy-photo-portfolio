@@ -106,6 +106,79 @@ h1 {
   font-family: "Segoe UI", sans-serif;
 }
 
+.services {
+  margin-top: 20px;
+}
+
+.services h2 {
+  margin: 0;
+}
+
+.service-grid {
+  margin-top: 14px;
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 1fr;
+}
+
+.service-card {
+  border: 1px solid var(--line);
+  background: #11151a;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.service-card h3 {
+  margin: 0 0 10px;
+  color: #efe6d6;
+}
+
+.service-card p {
+  margin: 8px 0;
+  color: #d6d1c7;
+  font-family: "Segoe UI", sans-serif;
+  line-height: 1.6;
+}
+
+.service-cta {
+  display: inline-block;
+  margin-top: 10px;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  text-decoration: none;
+  font-family: "Segoe UI", sans-serif;
+  border-radius: 999px;
+  padding: 8px 14px;
+  transition: 0.2s ease;
+}
+
+.service-cta:hover {
+  background: var(--accent);
+  color: #1d1a17;
+}
+
+.contact-card {
+  margin-top: 16px;
+  border: 1px dashed rgba(212, 180, 131, 0.5);
+  background: #12171d;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.contact-card h2 {
+  margin: 0;
+}
+
+
+
+.copy-tip {
+  min-height: 1.2em;
+  margin-top: 8px;
+  color: var(--accent);
+  font-family: "Segoe UI", sans-serif;
+  font-size: 0.92rem;
+}
+
 .profile-card {
   margin-top: 18px;
   border: 1px solid var(--line);
@@ -234,15 +307,25 @@ h1 {
   padding: 8px 0 24px;
 }
 
-@media (min-width: 640px) {
-  .gallery-grid {
-    columns: 2;
+@media (min-width: 760px) {
+  .service-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (min-width: 980px) {
   .gallery-grid {
     columns: 3;
+  }
+
+  .service-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 640px) and (max-width: 979px) {
+  .gallery-grid {
+    columns: 2;
   }
 }
 
@@ -256,3 +339,4 @@ h1 {
     transform: translateY(0);
   }
 }
+

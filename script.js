@@ -65,6 +65,27 @@
   { category: "portrait", name: "微信图片_20251123141715_100_277.jpg", label: "人像" },
   { category: "portrait", name: "微信图片_20251123141718_101_277.jpg", label: "人像" },
   { category: "portrait", name: "微信图片_20260228213409_196_277.jpg", label: "人像" },
+  { category: "portrait", name: "人像1.jpg", label: "人像" },
+  { category: "portrait", name: "人像2.jpg", label: "人像" },
+  { category: "portrait", name: "人像3.jpg", label: "人像" },
+  { category: "portrait", name: "人像4.jpg", label: "人像" },
+  { category: "portrait", name: "人像5.jpg", label: "人像" },
+  { category: "portrait", name: "人像6.jpg", label: "人像" },
+  { category: "portrait", name: "人像8.jpg", label: "人像" },
+  { category: "portrait", name: "人像9.jpg", label: "人像" },
+  { category: "portrait", name: "人像7.jpg", label: "人像" },
+  { category: "portrait", name: "人像10.jpg", label: "人像" },
+  { category: "portrait", name: "人像11.jpg", label: "人像" },
+  { category: "portrait", name: "人像12.jpg", label: "人像" },
+  { category: "portrait", name: "人像13.jpg", label: "人像" },
+  { category: "portrait", name: "人像14.jpg", label: "人像" },
+  { category: "portrait", name: "人像15.jpg", label: "人像" },
+  { category: "portrait", name: "人像16.jpg", label: "人像" },
+  { category: "portrait", name: "人像17.jpg", label: "人像" },
+  { category: "portrait", name: "人像18.jpg", label: "人像" },
+  { category: "portrait", name: "人像19.jpg", label: "人像" },
+  { category: "portrait", name: "人像20.jpg", label: "人像" },
+  { category: "portrait", name: "人像21.jpg", label: "人像" },
 ];
 
 const galleryGrid = document.getElementById("gallery-grid");
@@ -74,6 +95,9 @@ const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightbox-img");
 const lightboxCaption = document.getElementById("lightbox-caption");
 const lightboxClose = document.getElementById("lightbox-close");
+const copyTip = document.getElementById("copy-tip");
+const copyWechatButtons = document.querySelectorAll(".copy-wechat");
+const WECHAT_ID = "17765103312";
 
 let displayPhotos = [];
 
@@ -158,6 +182,29 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
+async function copyWechatId() {
+  try {
+    await navigator.clipboard.writeText(WECHAT_ID);
+    if (copyTip) {
+      copyTip.textContent = "微信号已复制，请到微信搜索添加。";
+    }
+  } catch {
+    if (copyTip) {
+      copyTip.textContent = `复制失败，请手动添加微信：${WECHAT_ID}`;
+    }
+  }
+}
+
+copyWechatButtons.forEach((btn) => {
+  btn.addEventListener("click", async (e) => {
+    e.preventDefault();
+    await copyWechatId();
+    const contact = document.getElementById("contact");
+    if (contact) {
+      contact.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  });
+});
 if (yearEl) {
   yearEl.textContent = new Date().getFullYear();
 }
@@ -168,3 +215,5 @@ async function initGallery() {
 }
 
 initGallery();
+
+
