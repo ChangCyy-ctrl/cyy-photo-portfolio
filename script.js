@@ -1,6 +1,6 @@
 // 照片数据
 const photos = [
-  // 城市风光 - city
+  // ========== 城市风光 - city ==========
   { src: 'assets/photos/city/49D107F8-3735-489D-B34D-831362B32B5B.jpeg', category: 'city', title: '城市风光' },
   { src: 'assets/photos/city/646EFD2A-D3A4-4343-BBE6-8FA641237394.jpeg', category: 'city', title: '城市风光' },
   { src: 'assets/photos/city/77E7F3A3-16F7-4BCB-A7FB-F83F6894A51E.jpeg', category: 'city', title: '城市风光' },
@@ -15,7 +15,7 @@ const photos = [
   { src: 'assets/photos/city/IMG_7193.jpeg', category: 'city', title: '城市风光' },
   { src: 'assets/photos/city/IMG_7194.jpeg', category: 'city', title: '城市风光' },
 
-  // 人文 - renwen
+  // ========== 人文纪实 - renwen ==========
   { src: 'assets/photos/renwen/IMG_6461.png', category: 'people', title: '人文纪实' },
   { src: 'assets/photos/renwen/IMG_6797.png', category: 'people', title: '人文纪实' },
   { src: 'assets/photos/renwen/IMG_6803.png', category: 'people', title: '人文纪实' },
@@ -45,6 +45,29 @@ const photos = [
   { src: 'assets/photos/renwen/photoby_1781099739169.png', category: 'people', title: '人文纪实' },
   { src: 'assets/photos/renwen/photoby_1781099757815.png', category: 'people', title: '人文纪实' },
   { src: 'assets/photos/renwen/photoby_1781099758491.png', category: 'people', title: '人文纪实' },
+
+  // ========== 人像摄影 - portrait ==========
+  { src: 'assets/photos/portrait/人像1.jpg', category: 'portrait', title: '人像摄影' },
+  { src: 'assets/photos/portrait/人像2.jpg', category: 'portrait', title: '人像摄影' },
+  { src: 'assets/photos/portrait/人像3.jpg', category: 'portrait', title: '人像摄影' },
+  { src: 'assets/photos/portrait/人像4.jpg', category: 'portrait', title: '人像摄影' },
+  { src: 'assets/photos/portrait/人像5.jpg', category: 'portrait', title: '人像摄影' },
+  { src: 'assets/photos/portrait/人像6.jpg', category: 'portrait', title: '人像摄影' },
+  { src: 'assets/photos/portrait/人像7.jpg', category: 'portrait', title: '人像摄影' },
+  { src: 'assets/photos/portrait/人像8.jpg', category: 'portrait', title: '人像摄影' },
+  { src: 'assets/photos/portrait/人像9.jpg', category: 'portrait', title: '人像摄影' },
+  { src: 'assets/photos/portrait/人像10.jpg', category: 'portrait', title: '人像摄影' },
+  { src: 'assets/photos/portrait/人像11.jpg', category: 'portrait', title: '人像摄影' },
+  { src: 'assets/photos/portrait/人像12.jpg', category: 'portrait', title: '人像摄影' },
+  { src: 'assets/photos/portrait/人像13.jpg', category: 'portrait', title: '人像摄影' },
+  { src: 'assets/photos/portrait/人像14.jpg', category: 'portrait', title: '人像摄影' },
+  { src: 'assets/photos/portrait/人像15.jpg', category: 'portrait', title: '人像摄影' },
+  { src: 'assets/photos/portrait/人像16.jpg', category: 'portrait', title: '人像摄影' },
+  { src: 'assets/photos/portrait/人像17.jpg', category: 'portrait', title: '人像摄影' },
+  { src: 'assets/photos/portrait/人像18.jpg', category: 'portrait', title: '人像摄影' },
+  { src: 'assets/photos/portrait/人像19.jpg', category: 'portrait', title: '人像摄影' },
+  { src: 'assets/photos/portrait/人像20.jpg', category: 'portrait', title: '人像摄影' },
+  { src: 'assets/photos/portrait/人像21.jpg', category: 'portrait', title: '人像摄影' },
 ];
 
 // 渲染画廊
