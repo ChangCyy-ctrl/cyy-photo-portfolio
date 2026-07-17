@@ -1,220 +1,153 @@
-﻿const photos = [
-  { category: "renwen", name: "微信图片_20260228212632_167_277.jpg", label: "人文" },
-  { category: "renwen", name: "微信图片_20260228212633_168_277.jpg", label: "人文" },
-  { category: "renwen", name: "微信图片_20260228212634_169_277.jpg", label: "人文" },
-  { category: "renwen", name: "微信图片_20260228213331_172_277.jpg", label: "人文" },
-  { category: "renwen", name: "微信图片_20260228213332_173_277.jpg", label: "人文" },
-  { category: "renwen", name: "微信图片_20260228213333_174_277.jpg", label: "人文" },
-  { category: "renwen", name: "微信图片_20260228213334_175_277.jpg", label: "人文" },
-  { category: "renwen", name: "微信图片_20260228213338_176_277.jpg", label: "人文" },
-  { category: "renwen", name: "微信图片_20260228213344_177_277.jpg", label: "人文" },
-  { category: "renwen", name: "微信图片_20260228213406_192_277.jpg", label: "人文" },
-  { category: "renwen", name: "微信图片_20260228213407_194_277.jpg", label: "人文" },
-  { category: "renwen", name: "微信图片_20260228213423_208_277.jpg", label: "人文" },
-  { category: "city", name: "微信图片_20260228212614_147_277.png", label: "城市风光" },
-  { category: "city", name: "微信图片_20260228212615_148_277.jpg", label: "城市风光" },
-  { category: "city", name: "微信图片_20260228212616_149_277.jpg", label: "城市风光" },
-  { category: "city", name: "微信图片_20260228212617_150_277.jpg", label: "城市风光" },
-  { category: "city", name: "微信图片_20260228212618_151_277.jpg", label: "城市风光" },
-  { category: "city", name: "微信图片_20260228212619_152_277.jpg", label: "城市风光" },
-  { category: "city", name: "微信图片_20260228212620_153_277.jpg", label: "城市风光" },
-  { category: "city", name: "微信图片_20260228212621_154_277.jpg", label: "城市风光" },
-  { category: "city", name: "微信图片_20260228212622_155_277.jpg", label: "城市风光" },
-  { category: "city", name: "微信图片_20260228212623_156_277.jpg", label: "城市风光" },
-  { category: "city", name: "微信图片_20260228212623_157_277.jpg", label: "城市风光" },
-  { category: "city", name: "微信图片_20260228212624_158_277.jpg", label: "城市风光" },
-  { category: "city", name: "微信图片_20260228212625_159_277.jpg", label: "城市风光" },
-  { category: "city", name: "微信图片_20260228212626_160_277.jpg", label: "城市风光" },
-  { category: "city", name: "微信图片_20260228212627_161_277.jpg", label: "城市风光" },
-  { category: "city", name: "微信图片_20260228212628_162_277.jpg", label: "城市风光" },
-  { category: "city", name: "微信图片_20260228212628_163_277.jpg", label: "城市风光" },
-  { category: "city", name: "微信图片_20260228212629_164_277.jpg", label: "城市风光" },
-  { category: "city", name: "微信图片_20260228212630_165_277.jpg", label: "城市风光" },
-  { category: "city", name: "微信图片_20260228212631_166_277.jpg", label: "城市风光" },
-  { category: "city", name: "微信图片_20260228212634_170_277.jpg", label: "城市风光" },
-  { category: "city", name: "微信图片_20260228212635_171_277.jpg", label: "城市风光" },
-  { category: "city", name: "微信图片_20260228213345_178_277.jpg", label: "城市风光" },
-  { category: "city", name: "微信图片_20260228213346_179_277.jpg", label: "城市风光" },
-  { category: "city", name: "微信图片_20260228213346_180_277.jpg", label: "城市风光" },
-  { category: "city", name: "微信图片_20260228213347_181_277.jpg", label: "城市风光" },
-  { category: "city", name: "微信图片_20260228213348_182_277.jpg", label: "城市风光" },
-  { category: "city", name: "微信图片_20260228213349_183_277.jpg", label: "城市风光" },
-  { category: "city", name: "微信图片_20260228213350_184_277.jpg", label: "城市风光" },
-  { category: "city", name: "微信图片_20260228213351_185_277.jpg", label: "城市风光" },
-  { category: "city", name: "微信图片_20260228213351_186_277.jpg", label: "城市风光" },
-  { category: "city", name: "微信图片_20260228213352_187_277.jpg", label: "城市风光" },
-  { category: "city", name: "微信图片_20260228213353_188_277.jpg", label: "城市风光" },
-  { category: "city", name: "微信图片_20260228213354_189_277.jpg", label: "城市风光" },
-  { category: "city", name: "微信图片_20260228213404_190_277.jpg", label: "城市风光" },
-  { category: "city", name: "微信图片_20260228213405_191_277.jpg", label: "城市风光" },
-  { category: "city", name: "微信图片_20260228213406_193_277.jpg", label: "城市风光" },
-  { category: "city", name: "微信图片_20260228213408_195_277.jpg", label: "城市风光" },
-  { category: "city", name: "微信图片_20260228213410_197_277.jpg", label: "城市风光" },
-  { category: "city", name: "微信图片_20260228213412_198_277.jpg", label: "城市风光" },
-  { category: "city", name: "微信图片_20260228213413_199_277.jpg", label: "城市风光" },
-  { category: "city", name: "微信图片_20260228213414_200_277.jpg", label: "城市风光" },
-  { category: "city", name: "微信图片_20260228213415_201_277.jpg", label: "城市风光" },
-  { category: "city", name: "微信图片_20260228213416_202_277.jpg", label: "城市风光" },
-  { category: "city", name: "微信图片_20260228213416_203_277.jpg", label: "城市风光" },
-  { category: "city", name: "微信图片_20260228213417_204_277.jpg", label: "城市风光" },
-  { category: "city", name: "微信图片_20260228213418_205_277.jpg", label: "城市风光" },
-  { category: "city", name: "微信图片_20260228213419_206_277.jpg", label: "城市风光" },
-  { category: "city", name: "微信图片_20260228213421_207_277.jpg", label: "城市风光" },
-  { category: "portrait", name: "微信图片_20251123141710_98_277.jpg", label: "人像" },
-  { category: "portrait", name: "微信图片_20251123141713_99_277.jpg", label: "人像" },
-  { category: "portrait", name: "微信图片_20251123141715_100_277.jpg", label: "人像" },
-  { category: "portrait", name: "微信图片_20251123141718_101_277.jpg", label: "人像" },
-  { category: "portrait", name: "微信图片_20260228213409_196_277.jpg", label: "人像" },
-  { category: "portrait", name: "人像1.jpg", label: "人像" },
-  { category: "portrait", name: "人像2.jpg", label: "人像" },
-  { category: "portrait", name: "人像3.jpg", label: "人像" },
-  { category: "portrait", name: "人像4.jpg", label: "人像" },
-  { category: "portrait", name: "人像5.jpg", label: "人像" },
-  { category: "portrait", name: "人像6.jpg", label: "人像" },
-  { category: "portrait", name: "人像8.jpg", label: "人像" },
-  { category: "portrait", name: "人像9.jpg", label: "人像" },
-  { category: "portrait", name: "人像7.jpg", label: "人像" },
-  { category: "portrait", name: "人像10.jpg", label: "人像" },
-  { category: "portrait", name: "人像11.jpg", label: "人像" },
-  { category: "portrait", name: "人像12.jpg", label: "人像" },
-  { category: "portrait", name: "人像13.jpg", label: "人像" },
-  { category: "portrait", name: "人像14.jpg", label: "人像" },
-  { category: "portrait", name: "人像15.jpg", label: "人像" },
-  { category: "portrait", name: "人像16.jpg", label: "人像" },
-  { category: "portrait", name: "人像17.jpg", label: "人像" },
-  { category: "portrait", name: "人像18.jpg", label: "人像" },
-  { category: "portrait", name: "人像19.jpg", label: "人像" },
-  { category: "portrait", name: "人像20.jpg", label: "人像" },
-  { category: "portrait", name: "人像21.jpg", label: "人像" },
+// 照片数据
+const photos = [
+  // 城市风光
+  { src: '城市/49D107F8-3735-489D-B34D-831362B32B5B.jpeg', category: 'city', title: '城市风光' },
+  { src: '城市/646EFD2A-D3A4-4343-BBE6-8FA641237394.jpeg', category: 'city', title: '城市风光' },
+  { src: '城市/77E7F3A3-16F7-4BCB-A7FB-F83F6894A51E.jpeg', category: 'city', title: '城市风光' },
+  { src: '城市/795FB408-EC67-456F-B42D-FCFB39625C95.jpeg', category: 'city', title: '城市风光' },
+  { src: '城市/96F1FAB5-9111-4C49-90C9-C1577A902FB3.jpeg', category: 'city', title: '城市风光' },
+  { src: '城市/IMG_5751.jpeg', category: 'city', title: '城市风光' },
+  { src: '城市/IMG_5753.jpeg', category: 'city', title: '城市风光' },
+  { src: '城市/IMG_5754.jpeg', category: 'city', title: '城市风光' },
+  { src: '城市/IMG_5755.jpeg', category: 'city', title: '城市风光' },
+  { src: '城市/IMG_5756.jpeg', category: 'city', title: '城市风光' },
+  { src: '城市/IMG_5977.jpeg', category: 'city', title: '城市风光' },
+  { src: '城市/IMG_7193.jpeg', category: 'city', title: '城市风光' },
+  { src: '城市/IMG_7194.jpeg', category: 'city', title: '城市风光' },
+
+  // 人文
+  { src: '人文/IMG_6461.jpeg', category: 'people', title: '人文纪实' },
+  { src: '人文/IMG_6797.jpeg', category: 'people', title: '人文纪实' },
+  { src: '人文/IMG_6803.jpeg', category: 'people', title: '人文纪实' },
+  { src: '人文/IMG_6805.jpeg', category: 'people', title: '人文纪实' },
+  { src: '人文/IMG_6815.jpeg', category: 'people', title: '人文纪实' },
+  { src: '人文/IMG_7088.jpeg', category: 'people', title: '人文纪实' },
+  { src: '人文/IMG_7089.jpeg', category: 'people', title: '人文纪实' },
+  { src: '人文/photoby_1779630563482.jpeg', category: 'people', title: '人文纪实' },
+  { src: '人文/photoby_1779630577222.jpeg', category: 'people', title: '人文纪实' },
+  { src: '人文/photoby_1779630586586.jpeg', category: 'people', title: '人文纪实' },
+  { src: '人文/photoby_1779630598076.jpeg', category: 'people', title: '人文纪实' },
+  { src: '人文/photoby_1779630608597.jpeg', category: 'people', title: '人文纪实' },
+  { src: '人文/photoby_1779630626023.jpeg', category: 'people', title: '人文纪实' },
+  { src: '人文/photoby_1779630643993.jpeg', category: 'people', title: '人文纪实' },
+  { src: '人文/photoby_1779630654691.jpeg', category: 'people', title: '人文纪实' },
+  { src: '人文/photoby_1779630665891.jpeg', category: 'people', title: '人文纪实' },
+  { src: '人文/photoby_1779630698071.jpeg', category: 'people', title: '人文纪实' },
+  { src: '人文/photoby_1780747841858.jpeg', category: 'people', title: '人文纪实' },
+  { src: '人文/photoby_1780747842547.jpeg', category: 'people', title: '人文纪实' },
+  { src: '人文/photoby_1780747856152.jpeg', category: 'people', title: '人文纪实' },
+  { src: '人文/photoby_1780747856770.jpeg', category: 'people', title: '人文纪实' },
+  { src: '人文/photoby_1781099685152.jpeg', category: 'people', title: '人文纪实' },
+  { src: '人文/photoby_1781099685831.jpeg', category: 'people', title: '人文纪实' },
+  { src: '人文/photoby_1781099703036.jpeg', category: 'people', title: '人文纪实' },
+  { src: '人文/photoby_1781099703688.jpeg', category: 'people', title: '人文纪实' },
+  { src: '人文/photoby_1781099738535.jpeg', category: 'people', title: '人文纪实' },
+  { src: '人文/photoby_1781099739169.jpeg', category: 'people', title: '人文纪实' },
+  { src: '人文/photoby_1781099757815.jpeg', category: 'people', title: '人文纪实' },
+  { src: '人文/photoby_1781099758491.jpeg', category: 'people', title: '人文纪实' },
 ];
 
-const galleryGrid = document.getElementById("gallery-grid");
-const filterButtons = document.querySelectorAll(".filter-btn");
-const yearEl = document.getElementById("year");
-const lightbox = document.getElementById("lightbox");
-const lightboxImg = document.getElementById("lightbox-img");
-const lightboxCaption = document.getElementById("lightbox-caption");
-const lightboxClose = document.getElementById("lightbox-close");
-const copyTip = document.getElementById("copy-tip");
-const copyWechatButtons = document.querySelectorAll(".copy-wechat");
-const WECHAT_ID = "17665103312";
+// 渲染画廊
+function renderGallery(filter = 'all') {
+  const gallery = document.querySelector('.gallery-grid');
+  if (!gallery) return;
 
-let displayPhotos = [];
+  const filtered = filter === 'all' 
+    ? photos 
+    : photos.filter(p => p.category === filter);
 
-function buildPath(item) {
-  return `assets/photos/${item.category}/${encodeURIComponent(item.name)}`;
-}
+  gallery.innerHTML = filtered.map(photo => `
+    <div class="photo-card" data-src="${photo.src}" data-title="${photo.title}">
+      <img src="${photo.src}" alt="${photo.title}" loading="lazy">
+      <div class="photo-meta">${photo.title}</div>
+    </div>
+  `).join('');
 
-function canLoadImage(src) {
-  return new Promise((resolve) => {
-    const img = new Image();
-    img.onload = () => resolve(true);
-    img.onerror = () => resolve(false);
-    img.src = src;
-  });
-}
-
-async function buildDisplayPhotos() {
-  const checks = await Promise.all(
-    photos.map(async (item) => {
-      const src = buildPath(item);
-      const ok = await canLoadImage(src);
-      return ok ? item : null;
-    })
-  );
-
-  const valid = checks.filter(Boolean);
-  const counters = { renwen: 0, city: 0, portrait: 0 };
-  displayPhotos = valid.map((item) => {
-    counters[item.category] += 1;
-    const number = String(counters[item.category]).padStart(2, "0");
-    return {
-      ...item,
-      title: `${item.label}作品 ${number}`,
-    };
-  });
-}
-
-function renderGallery(category) {
-  const list =
-    category === "all"
-      ? displayPhotos
-      : displayPhotos.filter((p) => p.category === category);
-  galleryGrid.innerHTML = "";
-
-  list.forEach((item) => {
-    const card = document.createElement("article");
-    card.className = "photo-card";
-    card.innerHTML = `
-      <img src="${buildPath(item)}" alt="${item.title}" loading="lazy" />
-      <div class="photo-meta">${item.title}</div>
-    `;
-    card.addEventListener("click", () => {
-      lightboxImg.src = buildPath(item);
-      lightboxCaption.textContent = item.title;
-      lightbox.classList.add("open");
+  // 绑定点击事件
+  document.querySelectorAll('.photo-card').forEach(card => {
+    card.addEventListener('click', () => {
+      openLightbox(card.dataset.src, card.dataset.title);
     });
-    galleryGrid.appendChild(card);
   });
 }
 
-filterButtons.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    filterButtons.forEach((b) => b.classList.remove("active"));
-    btn.classList.add("active");
-    renderGallery(btn.dataset.category);
+// 筛选按钮
+function initFilters() {
+  const buttons = document.querySelectorAll('.filter-btn');
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      renderGallery(filter);
+    });
+  });
+}
+
+// 灯箱功能
+function openLightbox(src, title) {
+  const lightbox = document.querySelector('.lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxCaption = document.getElementById('lightbox-caption');
+
+  if (lightbox && lightboxImg) {
+    lightboxImg.src = src;
+    if (lightboxCaption) lightboxCaption.textContent = title;
+    lightbox.classList.add('open');
+  }
+}
+
+function closeLightbox() {
+  const lightbox = document.querySelector('.lightbox');
+  if (lightbox) {
+    lightbox.classList.remove('open');
+  }
+}
+
+// 复制微信号
+function initCopyWechat() {
+  const wechatEl = document.getElementById('wechat-num');
+  const copyTip = document.querySelector('.copy-tip');
+  if (!wechatEl) return;
+
+  wechatEl.style.cursor = 'pointer';
+  wechatEl.addEventListener('click', () => {
+    const num = wechatEl.textContent.trim();
+    navigator.clipboard.writeText(num).then(() => {
+      if (copyTip) {
+        copyTip.textContent = '微信号已复制，可直接粘贴添加';
+        setTimeout(() => {
+          copyTip.textContent = '';
+        }, 2000);
+      }
+    }).catch(() => {
+      if (copyTip) {
+        copyTip.textContent = '请手动复制微信号';
+      }
+    });
+  });
+}
+
+// 初始化
+document.addEventListener('DOMContentLoaded', () => {
+  renderGallery('all');
+  initFilters();
+  initCopyWechat();
+
+  // 灯箱关闭
+  const lightbox = document.querySelector('.lightbox');
+  const closeBtn = document.querySelector('.lightbox-close');
+  if (lightbox) {
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+  }
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeLightbox);
+  }
+
+  // ESC 关闭灯箱
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeLightbox();
   });
 });
-
-lightboxClose.addEventListener("click", () => {
-  lightbox.classList.remove("open");
-});
-
-lightbox.addEventListener("click", (e) => {
-  if (e.target === lightbox) {
-    lightbox.classList.remove("open");
-  }
-});
-
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") {
-    lightbox.classList.remove("open");
-  }
-});
-
-async function copyWechatId() {
-  try {
-    await navigator.clipboard.writeText(WECHAT_ID);
-    if (copyTip) {
-      copyTip.textContent = "微信号已复制，请到微信搜索添加。";
-    }
-  } catch {
-    if (copyTip) {
-      copyTip.textContent = `复制失败，请手动添加微信：${WECHAT_ID}`;
-    }
-  }
-}
-
-copyWechatButtons.forEach((btn) => {
-  btn.addEventListener("click", async (e) => {
-    e.preventDefault();
-    await copyWechatId();
-    const contact = document.getElementById("contact");
-    if (contact) {
-      contact.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  });
-});
-if (yearEl) {
-  yearEl.textContent = new Date().getFullYear();
-}
-
-async function initGallery() {
-  await buildDisplayPhotos();
-  renderGallery("all");
-}
-
-initGallery();
-
-
-
